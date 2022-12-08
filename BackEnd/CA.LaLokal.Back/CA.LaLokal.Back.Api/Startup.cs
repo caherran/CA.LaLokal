@@ -1,3 +1,5 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer;
+using CA.Util.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,8 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NSwag;
 using NSwag.Generation.Processors.Security;
-using CA.Infraestructure.EFrameworkCore.SqlServer;
-using CA.Util.DependencyInjection;
 using System.Linq;
 
 namespace CA.LaLokal.Back.Api
@@ -28,7 +28,7 @@ namespace CA.LaLokal.Back.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            LoadAssembliesUtil.LoadAllAssemblies(names: new string[] { "Pkg" });
+            LoadAssembliesUtil.LoadAllAssemblies(names: new string[] { "CA" });
             services.AddHttpContextAccessor();
             services.AddResponseCompression();
             services.AddDbContext<Entities>(options =>
