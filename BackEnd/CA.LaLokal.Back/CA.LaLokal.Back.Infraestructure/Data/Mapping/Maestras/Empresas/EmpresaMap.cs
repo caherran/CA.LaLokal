@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.Empresas;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.Empresas;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Empresas
 {
@@ -9,7 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Empresas
     {
         public override void Configure(EntityTypeBuilder<Empresa> builder)
         {
-            builder.ToTable(nameof(Empresa));
+            builder.ToTable("mas_" + nameof(Empresa));
             builder.Property(p => p.Nombre).IsRequired().HasMaxLength(80);
             builder.Property(p => p.NIT).IsRequired().HasMaxLength(80);
             builder.Property(p => p.Direccion).IsRequired().HasMaxLength(80);

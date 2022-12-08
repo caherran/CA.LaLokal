@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.ZonasBarrios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.ZonasBarrios;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.ZonasBarrios
 {
@@ -9,7 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.ZonasBarrios
     {
         public override void Configure(EntityTypeBuilder<ZonaBarrio> builder)
         {
-            builder.ToTable(nameof(ZonaBarrio));
+            builder.ToTable("mas_" + nameof(ZonaBarrio));
             builder.Property(p => p.Codigo).IsRequired().HasMaxLength(80); builder.Property(p => p.Nombre).IsRequired().HasMaxLength(80);
             base.Configure(builder);
         }

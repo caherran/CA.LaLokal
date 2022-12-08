@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.Permisos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.Permisos;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Permisos
 {
@@ -9,9 +9,8 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Permisos
     {
         public override void Configure(EntityTypeBuilder<Permiso> builder)
         {
-            builder.ToTable(nameof(Permiso));
+            builder.ToTable("mas_" + nameof(Permiso));
             builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
-
             base.Configure(builder);
         }
     }

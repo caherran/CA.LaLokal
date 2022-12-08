@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.Paises;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.Paises;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Paises
 {
@@ -9,7 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Paises
     {
         public override void Configure(EntityTypeBuilder<Pais> builder)
         {
-            builder.ToTable(nameof(Pais));
+            builder.ToTable("mas_" + nameof(Pais));
             builder.Property(p => p.Codigo).IsRequired().HasMaxLength(80);
             base.Configure(builder);
         }

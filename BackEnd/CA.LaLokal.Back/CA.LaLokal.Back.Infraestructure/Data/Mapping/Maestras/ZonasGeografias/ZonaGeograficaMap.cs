@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.ZonasGeografias;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.ZonasGeografias;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.ZonasGeografias
 {
@@ -9,8 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.ZonasGeografias
     {
         public override void Configure(EntityTypeBuilder<ZonaGeografica> builder)
         {
-            builder.ToTable(nameof(ZonaGeografica));
-
+            builder.ToTable("mas_" + nameof(ZonaGeografica));
             base.Configure(builder);
         }
     }

@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.CaracteristicasExternas;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.CaracteristicasExternas;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.CaracteristicasExternas
 {
@@ -9,7 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.CaracteristicasE
     {
         public override void Configure(EntityTypeBuilder<CaracteristicaExterna> builder)
         {
-            builder.ToTable(nameof(CaracteristicaExterna));
+            builder.ToTable("mas_" + nameof(CaracteristicaExterna));
             builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
             base.Configure(builder);
         }

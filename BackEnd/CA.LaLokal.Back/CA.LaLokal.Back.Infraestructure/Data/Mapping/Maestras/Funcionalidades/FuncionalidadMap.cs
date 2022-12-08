@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.Funcionalidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.Funcionalidades;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Funcionalidades
 {
@@ -9,7 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.Funcionalidades
     {
         public override void Configure(EntityTypeBuilder<Funcionalidad> builder)
         {
-            builder.ToTable(nameof(Funcionalidad));
+            builder.ToTable("mas_" + nameof(Funcionalidad));
             builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
             base.Configure(builder);
         }

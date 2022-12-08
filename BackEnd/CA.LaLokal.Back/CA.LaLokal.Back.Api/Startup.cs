@@ -42,11 +42,11 @@ namespace CA.LaLokal.Back.Api
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";
-                options.DefaultChallengeScheme = "oidc";
+                //options.DefaultChallengeScheme = "oidc";
             })
             .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options => { })
-            .AddCookie("Cookies")
-            .AddOpenIdConnect("oidc", options => { });
+            .AddCookie("Cookies");
+            //.AddOpenIdConnect("oidc", options => { });
             services.AddAuthorization();
 
             if (Env.IsDevelopment())
@@ -87,7 +87,7 @@ namespace CA.LaLokal.Back.Api
             if (!Env.IsEnvironment("NSwag"))//AddCustomServices Method is incompatible with NSwag generation
                 services.AddCustomServices(Configuration);
 
-            //services.UseSelfCertificate(Configuration);
+            services.UseSelfCertificate(Configuration);
 
             services.AddLogging();
         }
@@ -129,7 +129,7 @@ namespace CA.LaLokal.Back.Api
                 pattern: "{controller}/{action}/{id?}");
             });
 
-            app.UseSwaggerAuthorized();
+            //app.UseSwaggerAuthorized();
             app.UseSwaggerUi3(settings =>
             {
                 settings.DocumentPath = "/api/specification.json";

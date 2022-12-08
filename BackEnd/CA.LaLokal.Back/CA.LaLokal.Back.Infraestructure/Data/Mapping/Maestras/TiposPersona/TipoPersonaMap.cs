@@ -1,7 +1,7 @@
+using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
+using CA.LaLokal.Back.Domain.Maestras.TiposPersona;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CA.LaLokal.Back.Domain.Maestras.TiposPersona;
-using CA.Infraestructure.EFrameworkCore.SqlServer.Mapping;
 
 namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.TiposPersona
 {
@@ -9,7 +9,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Maestras.TiposPersona
     {
         public override void Configure(EntityTypeBuilder<TipoPersona> builder)
         {
-            builder.ToTable(nameof(TipoPersona));
+            builder.ToTable("mas_" + nameof(TipoPersona));
             builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
             base.Configure(builder);
         }
