@@ -1,0 +1,28 @@
+using CA.LaLokal.Back.Domain.Maestras.Ciudades;
+using CA.LaLokal.Back.Domain.Maestras.Departamentos;
+using CA.LaLokal.Back.Domain.Maestras.Paises;
+using CA.LaLokal.Back.Domain.Maestras.ZonasBarrios;
+using CA.Domain.Auditable;
+
+namespace CA.LaLokal.Back.Domain.Maestras.Empresas
+{
+    public class Empresa : BaseEntity
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string NIT { get; set; }
+        public int PaisId { get; set; }
+        public virtual Pais Pais { get; set; }
+        public int DepartamentoId { get; set; }
+        public virtual Departamento Departamento { get; set; }
+        public int CiudadId { get; set; }
+        public virtual Ciudad Ciudad { get; set; }
+        public int ZonaBarrioId { get; set; }
+        public virtual ZonaBarrio ZonaBarrio { get; set; }
+        public string Direccion { get; set; }
+        public string NombreContacto { get; set; }
+        public string CelularContacto { get; set; }
+        public string CorreoElectronico { get; set; }
+
+    }
+}

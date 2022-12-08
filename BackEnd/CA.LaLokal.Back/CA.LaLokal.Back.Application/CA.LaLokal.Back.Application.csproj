@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Globals">
+		<SccProjectName>SAK</SccProjectName>
+		<SccProvider>SAK</SccProvider>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccLocalPath>SAK</SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="CA.Pagination" Version="1.0.1.1" />
+		<PackageReference Include="CA.Repository.Abstractions" Version="1.0.1.1" />
+		<PackageReference Include="CA.Util.DateTimeUtils" Version="1.0.1.1" />
+		<PackageReference Include="CA.Util.DependencyInjection" Version="1.0.1.1" />
+		<PackageReference Include="CA.Util.MediatRUtils" Version="1.0.1.1" />
+		<PackageReference Include="CA.Utils.AutoMapperUtils" Version="1.0.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CA.LaLokal.Back.Domain\CA.LaLokal.Back.Domain.csproj" />
+	</ItemGroup>
+
+</Project>
