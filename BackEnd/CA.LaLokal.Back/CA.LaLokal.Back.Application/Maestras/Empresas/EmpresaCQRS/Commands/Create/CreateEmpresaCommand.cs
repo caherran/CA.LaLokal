@@ -1,13 +1,11 @@
 using AutoMapper;
-using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using CA.LaLokal.Back.Domain.Maestras.Empresas;
-using CA.GuidGenerator;
 using CA.Repository.Abstractions;
 using CA.Util.MediatRUtils;
 using CA.Utils.AutoMapperUtils;
+using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CA.LaLokal.Back.Application.Maestras.Empresas.EmpresaCQRS.Commands.Create
 {
@@ -15,8 +13,6 @@ namespace CA.LaLokal.Back.Application.Maestras.Empresas.EmpresaCQRS.Commands.Cre
     {
         public string Nombre { get; set; }
         public string NIT { get; set; }
-        public int PaisId { get; set; }
-        public int DepartamentoId { get; set; }
         public int CiudadId { get; set; }
         public int ZonaBarrioId { get; set; }
         public string Direccion { get; set; }

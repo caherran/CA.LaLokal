@@ -1,5 +1,5 @@
-using FluentValidation;
 using CA.Util.DependencyInjection;
+using FluentValidation;
 
 namespace CA.LaLokal.Back.Application.Maestras.Empresas.EmpresaCQRS.Commands.Create
 {
@@ -9,8 +9,6 @@ namespace CA.LaLokal.Back.Application.Maestras.Empresas.EmpresaCQRS.Commands.Cre
         {
             RuleFor(p => p.Nombre).NotEmpty().MaximumLength(80).Matches(regexConstants.GetRegexConstant(IRegexValidationConstants.AlphaNumericRegexConstant));
             RuleFor(p => p.NIT).NotEmpty().MaximumLength(80).Matches(regexConstants.GetRegexConstant(IRegexValidationConstants.AlphaNumericRegexConstant));
-            RuleFor(p => p.PaisId).NotEmpty();
-            RuleFor(p => p.DepartamentoId).NotEmpty();
             RuleFor(p => p.CiudadId).NotEmpty();
             RuleFor(p => p.ZonaBarrioId).NotEmpty();
             RuleFor(p => p.Direccion).NotEmpty().MaximumLength(80).Matches(regexConstants.GetRegexConstant(IRegexValidationConstants.AlphaNumericRegexConstant));

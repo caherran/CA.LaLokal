@@ -1,8 +1,6 @@
-using CA.LaLokal.Back.Domain.Maestras.Ciudades;
-using CA.LaLokal.Back.Domain.Maestras.Departamentos;
-using CA.LaLokal.Back.Domain.Maestras.Paises;
-using CA.LaLokal.Back.Domain.Maestras.ZonasBarrios;
 using CA.Domain.Auditable;
+using CA.LaLokal.Back.Domain.Maestras.Ciudades;
+using CA.LaLokal.Back.Domain.Maestras.ZonasBarrios;
 
 namespace CA.LaLokal.Back.Domain.Maestras.Empresas
 {
@@ -11,10 +9,6 @@ namespace CA.LaLokal.Back.Domain.Maestras.Empresas
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string NIT { get; set; }
-        public int PaisId { get; set; }
-        public virtual Pais Pais { get; set; }
-        public int DepartamentoId { get; set; }
-        public virtual Departamento Departamento { get; set; }
         public int CiudadId { get; set; }
         public virtual Ciudad Ciudad { get; set; }
         public int ZonaBarrioId { get; set; }
