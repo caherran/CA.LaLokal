@@ -454,48 +454,6 @@ namespace CA.LaLokal.Back.Infraestructure.Migrations
                     b.ToTable("mas_EstadoCartera", (string)null);
                 });
 
-            modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.EstadosCliente.EstadoCliente", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasDefaultValue("Default");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasDefaultValue("Default");
-
-                    b.Property<DateTime>("ModifiedOn")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("mas_EstadoCliente", (string)null);
-                });
-
             modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.EstadosFisicoPropiedad.EstadoFisicoPropiedad", b =>
                 {
                     b.Property<int>("Id")
@@ -620,6 +578,48 @@ namespace CA.LaLokal.Back.Infraestructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("mas_EstadoPublicacion", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.EstadosUsuario.EstadoUsuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("mas_EstadoUsuario", (string)null);
                 });
 
             modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.Estratos.Estrato", b =>
@@ -1156,6 +1156,48 @@ namespace CA.LaLokal.Back.Infraestructure.Migrations
                     b.ToTable("mas_TipoCliente", (string)null);
                 });
 
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.TiposIdentificacion.TipoIdentificacion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoIdentificacion", (string)null);
+                });
+
             modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.TiposInmueble.TipoInmueble", b =>
                 {
                     b.Property<int>("Id")
@@ -1502,6 +1544,1945 @@ namespace CA.LaLokal.Back.Infraestructure.Migrations
                     b.ToTable("mas_ZonaGeografica", (string)null);
                 });
 
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AlcobaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ano")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<decimal>("AreaConstruIda")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("AreaPrivada")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("AreaTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BanoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CiudadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CodigoPostal")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("DireccionMapa")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("EstadoFisicoPropiedadId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EstadoPublicacionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EstratoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GarajeId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("GestorInmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("MatriculaInmobiliaria")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<bool>("NoPublicar")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("Observaciones")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("PisoId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("PuntoExacto")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("SoloZona")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TipoInmuebleId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorAgua")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorEnergia")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorGasNatural")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorTelefoniaInternet")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ZonaBarrioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlcobaId");
+
+                    b.HasIndex("BanoId");
+
+                    b.HasIndex("CiudadId");
+
+                    b.HasIndex("EstadoFisicoPropiedadId");
+
+                    b.HasIndex("EstadoPublicacionId");
+
+                    b.HasIndex("EstratoId");
+
+                    b.HasIndex("GarajeId");
+
+                    b.HasIndex("GestorInmuebleId");
+
+                    b.HasIndex("PisoId");
+
+                    b.HasIndex("TipoInmuebleId");
+
+                    b.HasIndex("ZonaBarrioId");
+
+                    b.ToTable("Inmueble", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesCaracteristicasExternas.InmuebleCaracteristicaExterna", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CaracteristicaExternaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaExternaId");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("InmuebleCaracteristicaExterna", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesCaracteristicasInternas.InmuebleCaracteristicaInterna", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CaracteristicaInternaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaInternaId");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("InmuebleCaracteristicaInterna", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesCompartir.InmuebleCompartir", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Asunto")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("InmuebleCompartir", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesDocumentaciones.InmuebleDocumentacion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CertificadoCamaraComercio")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CertificadoLibertad")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ContratoCompraAlquiler")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaCedula")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaEscrituraCompraventa")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaPromesaCompraventa")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaRecibosServiciosPublicosPagos")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("EntregaCartaInstrucciones")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("FirmaContratoAdministración")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("PazSalvoAdministración")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("RUT")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("UltimoPagoImpuestoPredial")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("InmuebleDocumentacion", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesMultimedia.InmuebleMultimedia", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("URLTour360")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("URLVideo")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("InmuebleMultimedia", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesMultimediaImagenes.InmuebleMultimediaImagen", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("URLImagen")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("InmuebleMultimediaImagen", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesNegociaciones.InmuebleNegociacion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<DateTime>("FechaExpiracionContrato")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<decimal>("PrecioAlquiler")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PrecioVenta")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TiempoId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("TieneCantIdadFija")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("TieneContratoExclusivIdad")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("TienePorcentajePrecio")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TipoMonedaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoNegocioId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorAdministracion")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorCantIdadFija")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ValorPorcentajePrecio")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.HasIndex("TiempoId");
+
+                    b.HasIndex("TipoMonedaId");
+
+                    b.HasIndex("TipoNegocioId");
+
+                    b.ToTable("InmuebleNegociacion", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesUsuarios.InmuebleUsuario", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("TipoClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.HasIndex("TipoClienteId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("InmuebleUsuario", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.Proyectos.Proyecto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CantIdadInversionistas")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("CierreSpA")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<decimal>("ComisiónCorretajeCompra")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CompraTerreno")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ContabilIdadMensual")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ContabilIdadRentaAnual")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Contribuciones")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CostoProyecto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CreacionSpA")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("EstadoProyectoId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("EstudioTítulos")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("FondoReservaProyecto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("IngresoEstimadoVenta")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("InscripciónPropiedadCBR")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("InscripciónSpA")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MarketingVenta")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<decimal>("MontoMaximoInversion")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MontoMinimoInversion")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MontoTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PatenteComercialSpA")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PlazoRetornoEsperado")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<decimal>("PromesaEscrituraCompra")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PromesaEscrituraVenta")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ProyectoParcelación")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("RentabilIdad")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("RentabilIdadAnalizada")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("RentabilIdadTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TipoInmuebleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoMonedaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoNegocioId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalAFinanciar")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("UsuarioEncargadoId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EstadoProyectoId");
+
+                    b.HasIndex("TipoInmuebleId");
+
+                    b.HasIndex("TipoMonedaId");
+
+                    b.HasIndex("TipoNegocioId");
+
+                    b.HasIndex("UsuarioEncargadoId");
+
+                    b.ToTable("Proyecto", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.ProyectosDocumentos.ProyectoDocumento", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("URLDocumento")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("ProyectoDocumento", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.ProyectosInmuebles.ProyectoInmueble", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.ToTable("ProyectoInmueble", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.ProyectosInversionistas.ProyectoInversionista", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioInversionistaId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.HasIndex("UsuarioInversionistaId");
+
+                    b.ToTable("ProyectoInversionista", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ApellIdos")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("CiudadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ContratoPrestacion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaCedula")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CorreoElectronico")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("DatosAdicionales")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("EstadoUsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaNacimiento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MedioCaptacionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("NumeroIdentificacion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("Observaciones")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("RUT")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ReferidoPor")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("TelefonoFijo")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("TelefonoMovil")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("TipoIdentificacionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoPersonaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoUsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("URLFoto")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("UsuarioEncargadoId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CiudadId");
+
+                    b.HasIndex("EstadoUsuarioId");
+
+                    b.HasIndex("MedioCaptacionId");
+
+                    b.HasIndex("TipoIdentificacionId");
+
+                    b.HasIndex("TipoPersonaId");
+
+                    b.HasIndex("TipoUsuarioId");
+
+                    b.HasIndex("UsuarioEncargadoId");
+
+                    b.ToTable("Usuario", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandas.UsuarioDemanda", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("AreaMaxima")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("AreaMinima")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BanoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CiudadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("DetallePropiedad")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("GarajeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<decimal>("PresupuestoMaximo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PresupuestoMinimo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TipoInmuebleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoMonedaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoNegocioId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("ZonaBarrioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BanoId");
+
+                    b.HasIndex("CiudadId");
+
+                    b.HasIndex("GarajeId");
+
+                    b.HasIndex("TipoInmuebleId");
+
+                    b.HasIndex("TipoMonedaId");
+
+                    b.HasIndex("TipoNegocioId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.HasIndex("ZonaBarrioId");
+
+                    b.ToTable("UsuarioDemanda", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandasCarExternas.UsuarioDemandaCarExterna", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CaracteristicaExternaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioDemandaId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaExternaId");
+
+                    b.HasIndex("UsuarioDemandaId");
+
+                    b.ToTable("UsuarioDemandaCarExterna", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandasCarInternas.UsuarioDemandaCarInterna", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CaracteristicaInternaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioDemandaId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaInternaId");
+
+                    b.HasIndex("UsuarioDemandaId");
+
+                    b.ToTable("UsuarioDemandaCarInterna", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosEmpleados.UsuarioDocumentoEmpleado", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CertificadoLaboral")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaDocumentoIdentidad")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("DeclaracionRenta2UltimosAnos")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ExtractoBancario3meses")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioDocumentoEmpleado", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosIndependientes.UsuarioDocumentoIndependiente", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CertificadoCamaraComercio")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaDocumentoIdentidad")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("DeclaracionRenta2UltimosAnos")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ExtractoBancario3meses")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioDocumentoIndependiente", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosJuridicos.UsuarioDocumentoJuridico", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CertificadoCamaraComercio")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaCedulaRepresentanteLegal")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("DeclaracionRenta")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("EstadosFinancieros")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ExtractoBancario")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioDocumentoJuridico", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosPensionados.UsuarioDocumentoPensionado", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CertificadoPagoPension")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CopiaDocumentoIdentidad")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("ExtractoBancario3meses")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioDocumentoPensionado", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosEducacion.UsuarioEducacion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<bool>("EstudiaActualmente")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("FechaFinalizacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InstitucionUniversidad")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioEducacion", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosExperienciasLaborales.UsuarioExperienciaLaboral", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Cargo")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<DateTime>("FechaFinalizacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("NombreEmpresa")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<bool>("TrabajaActualmente")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioExperienciaLaboral", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosInmuebles.UsuarioInmueble", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("InmuebleId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InmuebleId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioInmueble", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosMultimedia.UsuarioMultimedia", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("URLImagen")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioMultimedia", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosProveedores.UsuarioProveedor", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CiudadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("Foto")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("PaginaWeb")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("URLFacebook")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("URLInstagram")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CiudadId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioProveedor", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosRedesSociales.UsuarioRedSocial", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("URLFacebook")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("URLInstagram")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("URLLinkedIn")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("URLTwitter")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioRedSocial", (string)null);
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosServicios.UsuarioServicio", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Default");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("ServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UsuarioId")
+                        .HasMaxLength(36)
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioServicio", (string)null);
+                });
+
             modelBuilder.Entity("CA.LaLokal.Back.Domain.Maestras.Ciudades.Ciudad", b =>
                 {
                     b.HasOne("CA.LaLokal.Back.Domain.Maestras.Departamentos.Departamento", "Departamento")
@@ -1593,6 +3574,634 @@ namespace CA.LaLokal.Back.Infraestructure.Migrations
                         .IsRequired();
 
                     b.Navigation("ZonaBarrio");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Alcobas.Alcoba", "Alcoba")
+                        .WithMany()
+                        .HasForeignKey("AlcobaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Banos.Bano", "Bano")
+                        .WithMany()
+                        .HasForeignKey("BanoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Ciudades.Ciudad", "Ciudad")
+                        .WithMany()
+                        .HasForeignKey("CiudadId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.EstadosFisicoPropiedad.EstadoFisicoPropiedad", "EstadoFisicoPropiedad")
+                        .WithMany()
+                        .HasForeignKey("EstadoFisicoPropiedadId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.EstadosPublicacion.EstadoPublicacion", "EstadoPublicacion")
+                        .WithMany()
+                        .HasForeignKey("EstadoPublicacionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Estratos.Estrato", "Estrato")
+                        .WithMany()
+                        .HasForeignKey("EstratoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Garajes.Garaje", "Garaje")
+                        .WithMany()
+                        .HasForeignKey("GarajeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "GestorInmueble")
+                        .WithMany()
+                        .HasForeignKey("GestorInmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Pisos.Piso", "Piso")
+                        .WithMany()
+                        .HasForeignKey("PisoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposInmueble.TipoInmueble", "TipoInmueble")
+                        .WithMany()
+                        .HasForeignKey("TipoInmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.ZonasBarrios.ZonaBarrio", "ZonaBarrio")
+                        .WithMany()
+                        .HasForeignKey("ZonaBarrioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Alcoba");
+
+                    b.Navigation("Bano");
+
+                    b.Navigation("Ciudad");
+
+                    b.Navigation("EstadoFisicoPropiedad");
+
+                    b.Navigation("EstadoPublicacion");
+
+                    b.Navigation("Estrato");
+
+                    b.Navigation("Garaje");
+
+                    b.Navigation("GestorInmueble");
+
+                    b.Navigation("Piso");
+
+                    b.Navigation("TipoInmueble");
+
+                    b.Navigation("ZonaBarrio");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesCaracteristicasExternas.InmuebleCaracteristicaExterna", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.CaracteristicasExternas.CaracteristicaExterna", "CaracteristicaExterna")
+                        .WithMany()
+                        .HasForeignKey("CaracteristicaExternaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CaracteristicaExterna");
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesCaracteristicasInternas.InmuebleCaracteristicaInterna", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.CaracteristicasInternas.CaracteristicaInterna", "CaracteristicaInterna")
+                        .WithMany()
+                        .HasForeignKey("CaracteristicaInternaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CaracteristicaInterna");
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesCompartir.InmuebleCompartir", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesDocumentaciones.InmuebleDocumentacion", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesMultimedia.InmuebleMultimedia", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesMultimediaImagenes.InmuebleMultimediaImagen", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesNegociaciones.InmuebleNegociacion", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Tiempos.Tiempo", "Tiempo")
+                        .WithMany()
+                        .HasForeignKey("TiempoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposMoneda.TipoMoneda", "TipoMoneda")
+                        .WithMany()
+                        .HasForeignKey("TipoMonedaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposNegocio.TipoNegocio", "TipoNegocio")
+                        .WithMany()
+                        .HasForeignKey("TipoNegocioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+
+                    b.Navigation("Tiempo");
+
+                    b.Navigation("TipoMoneda");
+
+                    b.Navigation("TipoNegocio");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.InmueblesUsuarios.InmuebleUsuario", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposCliente.TipoCliente", "TipoCliente")
+                        .WithMany()
+                        .HasForeignKey("TipoClienteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+
+                    b.Navigation("TipoCliente");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.Proyectos.Proyecto", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.EstadosProyecto.EstadoProyecto", "EstadoProyecto")
+                        .WithMany()
+                        .HasForeignKey("EstadoProyectoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposInmueble.TipoInmueble", "TipoInmueble")
+                        .WithMany()
+                        .HasForeignKey("TipoInmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposMoneda.TipoMoneda", "TipoMoneda")
+                        .WithMany()
+                        .HasForeignKey("TipoMonedaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposNegocio.TipoNegocio", "TipoNegocio")
+                        .WithMany()
+                        .HasForeignKey("TipoNegocioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "UsuarioEncargado")
+                        .WithMany()
+                        .HasForeignKey("UsuarioEncargadoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("EstadoProyecto");
+
+                    b.Navigation("TipoInmueble");
+
+                    b.Navigation("TipoMoneda");
+
+                    b.Navigation("TipoNegocio");
+
+                    b.Navigation("UsuarioEncargado");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.ProyectosDocumentos.ProyectoDocumento", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.ProyectosInmuebles.ProyectoInmueble", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.ProyectosInversionistas.ProyectoInversionista", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "UsuarioInversionista")
+                        .WithMany()
+                        .HasForeignKey("UsuarioInversionistaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+
+                    b.Navigation("UsuarioInversionista");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Ciudades.Ciudad", "Ciudad")
+                        .WithMany()
+                        .HasForeignKey("CiudadId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.EstadosUsuario.EstadoUsuario", "EstadoUsuario")
+                        .WithMany()
+                        .HasForeignKey("EstadoUsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.MediosCaptacion.MedioCaptacion", "MedioCaptacion")
+                        .WithMany()
+                        .HasForeignKey("MedioCaptacionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposIdentificacion.TipoIdentificacion", "TipoIdentificacion")
+                        .WithMany()
+                        .HasForeignKey("TipoIdentificacionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposPersona.TipoPersona", "TipoPersona")
+                        .WithMany()
+                        .HasForeignKey("TipoPersonaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposUsuario.TipoUsuario", "TipoUsuario")
+                        .WithMany()
+                        .HasForeignKey("TipoUsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "UsuarioEncargado")
+                        .WithMany()
+                        .HasForeignKey("UsuarioEncargadoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Ciudad");
+
+                    b.Navigation("EstadoUsuario");
+
+                    b.Navigation("MedioCaptacion");
+
+                    b.Navigation("TipoIdentificacion");
+
+                    b.Navigation("TipoPersona");
+
+                    b.Navigation("TipoUsuario");
+
+                    b.Navigation("UsuarioEncargado");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandas.UsuarioDemanda", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Banos.Bano", "Bano")
+                        .WithMany()
+                        .HasForeignKey("BanoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Ciudades.Ciudad", "Ciudad")
+                        .WithMany()
+                        .HasForeignKey("CiudadId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Garajes.Garaje", "Garaje")
+                        .WithMany()
+                        .HasForeignKey("GarajeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposInmueble.TipoInmueble", "TipoInmueble")
+                        .WithMany()
+                        .HasForeignKey("TipoInmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposMoneda.TipoMoneda", "TipoMoneda")
+                        .WithMany()
+                        .HasForeignKey("TipoMonedaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.TiposNegocio.TipoNegocio", "TipoNegocio")
+                        .WithMany()
+                        .HasForeignKey("TipoNegocioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.ZonasBarrios.ZonaBarrio", "ZonaBarrio")
+                        .WithMany()
+                        .HasForeignKey("ZonaBarrioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Bano");
+
+                    b.Navigation("Ciudad");
+
+                    b.Navigation("Garaje");
+
+                    b.Navigation("TipoInmueble");
+
+                    b.Navigation("TipoMoneda");
+
+                    b.Navigation("TipoNegocio");
+
+                    b.Navigation("Usuario");
+
+                    b.Navigation("ZonaBarrio");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandasCarExternas.UsuarioDemandaCarExterna", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.CaracteristicasExternas.CaracteristicaExterna", "CaracteristicaExterna")
+                        .WithMany()
+                        .HasForeignKey("CaracteristicaExternaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "UsuarioDemanda")
+                        .WithMany()
+                        .HasForeignKey("UsuarioDemandaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CaracteristicaExterna");
+
+                    b.Navigation("UsuarioDemanda");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandasCarInternas.UsuarioDemandaCarInterna", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.CaracteristicasInternas.CaracteristicaInterna", "CaracteristicaInterna")
+                        .WithMany()
+                        .HasForeignKey("CaracteristicaInternaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "UsuarioDemanda")
+                        .WithMany()
+                        .HasForeignKey("UsuarioDemandaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CaracteristicaInterna");
+
+                    b.Navigation("UsuarioDemanda");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosEmpleados.UsuarioDocumentoEmpleado", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosIndependientes.UsuarioDocumentoIndependiente", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosJuridicos.UsuarioDocumentoJuridico", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosPensionados.UsuarioDocumentoPensionado", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosEducacion.UsuarioEducacion", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosExperienciasLaborales.UsuarioExperienciaLaboral", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosInmuebles.UsuarioInmueble", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Inmuebles.Inmueble", "Inmueble")
+                        .WithMany()
+                        .HasForeignKey("InmuebleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Inmueble");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosMultimedia.UsuarioMultimedia", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosProveedores.UsuarioProveedor", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Maestras.Ciudades.Ciudad", "Ciudad")
+                        .WithMany()
+                        .HasForeignKey("CiudadId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Ciudad");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosRedesSociales.UsuarioRedSocial", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("CA.LaLokal.Back.Domain.Transacciones.UsuariosServicios.UsuarioServicio", b =>
+                {
+                    b.HasOne("CA.LaLokal.Back.Domain.Transacciones.Usuarios.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 #pragma warning restore 612, 618
         }
