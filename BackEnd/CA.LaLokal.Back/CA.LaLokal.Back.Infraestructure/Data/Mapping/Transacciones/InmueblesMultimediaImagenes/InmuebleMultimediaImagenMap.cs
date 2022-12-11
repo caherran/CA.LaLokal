@@ -12,7 +12,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.InmueblesMu
             builder.ToTable(nameof(InmuebleMultimediaImagen));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.InmuebleId).IsRequired().HasMaxLength(36);
-            builder.Property(p => p.URLImagen).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.URLImagen).IsRequired().HasMaxLength(200);
             base.Configure(builder);
         }
     }

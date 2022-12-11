@@ -16,7 +16,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.UsuariosDem
             builder.Property(p => p.PresupuestoMaximo).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(p => p.AreaMinima).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(p => p.AreaMaxima).IsRequired().HasColumnType("decimal(18,2)");
-            builder.Property(p => p.DetallePropiedad).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.DetallePropiedad).IsRequired().HasMaxLength(500);
             base.Configure(builder);
         }
     }

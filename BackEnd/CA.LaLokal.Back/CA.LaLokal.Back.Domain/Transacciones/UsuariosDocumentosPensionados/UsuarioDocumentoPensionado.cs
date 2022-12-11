@@ -12,6 +12,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosPensionados
         public string ExtractoBancario3meses { get; set; }
         public string CertificadoPagoPension { get; set; }
         public string CopiaDocumentoIdentidad { get; set; }
-
     }
 }

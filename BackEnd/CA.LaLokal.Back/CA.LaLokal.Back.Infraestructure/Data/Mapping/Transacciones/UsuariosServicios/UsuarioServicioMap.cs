@@ -12,7 +12,6 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.UsuariosSer
             builder.ToTable(nameof(UsuarioServicio));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.UsuarioId).IsRequired().HasMaxLength(36);
-
             base.Configure(builder);
         }
     }

@@ -12,7 +12,6 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.UsuariosDem
             builder.ToTable(nameof(UsuarioDemandaCarInterna));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.UsuarioDemandaId).IsRequired().HasMaxLength(36);
-
             base.Configure(builder);
         }
     }

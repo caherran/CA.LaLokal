@@ -12,7 +12,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.UsuariosMul
             builder.ToTable(nameof(UsuarioMultimedia));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.UsuarioId).IsRequired().HasMaxLength(36);
-            builder.Property(p => p.URLImagen).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.URLImagen).IsRequired().HasMaxLength(200);
             base.Configure(builder);
         }
     }

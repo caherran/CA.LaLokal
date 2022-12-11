@@ -13,7 +13,7 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.ProyectosDo
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.InmuebleId).IsRequired().HasMaxLength(36);
             builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.URLDocumento).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.URLDocumento).IsRequired().HasMaxLength(200);
             base.Configure(builder);
         }
     }

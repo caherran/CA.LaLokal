@@ -27,6 +27,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.InmueblesNegociaciones
         public Decimal ValorCantIdadFija { get; set; }
         public bool TieneContratoExclusivIdad { get; set; }
         public DateTime FechaExpiracionContrato { get; set; }
-
     }
 }

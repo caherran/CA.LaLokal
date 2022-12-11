@@ -12,6 +12,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandasCarInternas
         public virtual Usuario UsuarioDemanda { get; set; }
         public int CaracteristicaInternaId { get; set; }
         public virtual CaracteristicaInterna CaracteristicaInterna { get; set; }
-
     }
 }

@@ -13,6 +13,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosIndependientes
         public string DeclaracionRenta2UltimosAnos { get; set; }
         public string CertificadoCamaraComercio { get; set; }
         public string CopiaDocumentoIdentidad { get; set; }
-
     }
 }

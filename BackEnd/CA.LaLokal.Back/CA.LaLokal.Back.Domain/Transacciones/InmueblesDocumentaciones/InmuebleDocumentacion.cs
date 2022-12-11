@@ -21,6 +21,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.InmueblesDocumentaciones
         public string FirmaContratoAdministración { get; set; }
         public string EntregaCartaInstrucciones { get; set; }
         public string ContratoCompraAlquiler { get; set; }
-
     }
 }

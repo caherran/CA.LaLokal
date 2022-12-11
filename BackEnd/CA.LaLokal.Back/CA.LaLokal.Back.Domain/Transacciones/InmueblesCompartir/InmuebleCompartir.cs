@@ -13,6 +13,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.InmueblesCompartir
         public Guid UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
         public string Asunto { get; set; }
-
     }
 }

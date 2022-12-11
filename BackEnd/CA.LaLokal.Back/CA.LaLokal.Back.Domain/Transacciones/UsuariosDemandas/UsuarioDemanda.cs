@@ -35,6 +35,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosDemandas
         public int GarajeId { get; set; }
         public virtual Garaje Garaje { get; set; }
         public string DetallePropiedad { get; set; }
-
     }
 }

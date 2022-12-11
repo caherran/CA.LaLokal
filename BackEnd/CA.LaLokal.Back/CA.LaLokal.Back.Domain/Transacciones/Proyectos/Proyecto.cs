@@ -50,6 +50,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.Proyectos
         public Decimal FondoReservaProyecto { get; set; }
         public Decimal PromesaEscrituraVenta { get; set; }
         public Decimal CierreSpA { get; set; }
-
     }
 }

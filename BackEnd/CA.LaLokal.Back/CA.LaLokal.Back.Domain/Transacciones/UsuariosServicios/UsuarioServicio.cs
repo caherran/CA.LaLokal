@@ -10,6 +10,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosServicios
         public Guid UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
         public int ServicioId { get; set; }
-
     }
 }

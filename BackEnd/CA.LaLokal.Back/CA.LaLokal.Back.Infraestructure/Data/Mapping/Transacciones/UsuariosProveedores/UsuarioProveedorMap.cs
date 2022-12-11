@@ -12,12 +12,12 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.UsuariosPro
             builder.ToTable(nameof(UsuarioProveedor));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.UsuarioId).IsRequired().HasMaxLength(36);
-            builder.Property(p => p.Foto).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.Foto).IsRequired().HasMaxLength(200);
             builder.Property(p => p.Nombre).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(500);
             builder.Property(p => p.PaginaWeb).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.URLFacebook).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.URLInstagram).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.URLFacebook).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.URLInstagram).IsRequired().HasMaxLength(200);
             base.Configure(builder);
         }
     }

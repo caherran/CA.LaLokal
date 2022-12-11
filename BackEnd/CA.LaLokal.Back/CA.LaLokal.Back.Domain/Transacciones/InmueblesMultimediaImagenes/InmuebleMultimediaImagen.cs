@@ -10,6 +10,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.InmueblesMultimediaImagenes
         public Guid InmuebleId { get; set; }
         public virtual Inmueble Inmueble { get; set; }
         public string URLImagen { get; set; }
-
     }
 }

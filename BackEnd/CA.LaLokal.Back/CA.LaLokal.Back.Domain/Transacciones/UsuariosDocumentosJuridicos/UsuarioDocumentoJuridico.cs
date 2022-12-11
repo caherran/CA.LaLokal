@@ -14,6 +14,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosJuridicos
         public string CertificadoCamaraComercio { get; set; }
         public string EstadosFinancieros { get; set; }
         public string CopiaCedulaRepresentanteLegal { get; set; }
-
     }
 }

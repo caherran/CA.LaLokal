@@ -10,6 +10,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosMultimedia
         public Guid UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
         public string URLImagen { get; set; }
-
     }
 }

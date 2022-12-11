@@ -15,18 +15,18 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.Usuarios
             builder.Property(p => p.Nombres).IsRequired().HasMaxLength(80);
             builder.Property(p => p.ApellIdos).IsRequired().HasMaxLength(80);
             builder.Property(p => p.CorreoElectronico).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.TelefonoFijo).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.TelefonoMovil).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.TelefonoFijo).IsRequired().HasMaxLength(30);
+            builder.Property(p => p.TelefonoMovil).IsRequired().HasMaxLength(30);
             builder.Property(p => p.FechaNacimiento).IsRequired();
-            builder.Property(p => p.NumeroIdentificacion).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.NumeroIdentificacion).IsRequired().HasMaxLength(30);
             builder.Property(p => p.ReferidoPor).IsRequired().HasMaxLength(80);
             builder.Property(p => p.DatosAdicionales).IsRequired().HasMaxLength(80);
             builder.Property(p => p.Direccion).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.Observaciones).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.CopiaCedula).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.ContratoPrestacion).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.RUT).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.URLFoto).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.Observaciones).IsRequired().HasMaxLength(500);
+            builder.Property(p => p.CopiaCedula).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.ContratoPrestacion).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.RUT).HasMaxLength(200);
+            builder.Property(p => p.URLFoto).IsRequired().HasMaxLength(200);
             base.Configure(builder);
         }
     }

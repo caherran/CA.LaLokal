@@ -9,6 +9,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.ProyectosInmuebles
         public Guid Id { get; set; }
         public Guid InmuebleId { get; set; }
         public virtual Inmueble Inmueble { get; set; }
-
     }
 }

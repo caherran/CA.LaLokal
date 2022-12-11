@@ -12,11 +12,11 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.UsuariosDoc
             builder.ToTable(nameof(UsuarioDocumentoJuridico));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.UsuarioId).IsRequired().HasMaxLength(36);
-            builder.Property(p => p.ExtractoBancario).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.DeclaracionRenta).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.CertificadoCamaraComercio).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.EstadosFinancieros).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.CopiaCedulaRepresentanteLegal).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.ExtractoBancario).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.DeclaracionRenta).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.CertificadoCamaraComercio).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.EstadosFinancieros).IsRequired().HasMaxLength(200);
+            builder.Property(p => p.CopiaCedulaRepresentanteLegal).IsRequired().HasMaxLength(200);
             base.Configure(builder);
         }
     }

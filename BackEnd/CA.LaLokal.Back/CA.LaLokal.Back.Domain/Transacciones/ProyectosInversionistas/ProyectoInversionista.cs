@@ -12,6 +12,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.ProyectosInversionistas
         public virtual Inmueble Inmueble { get; set; }
         public Guid UsuarioInversionistaId { get; set; }
         public virtual Usuario UsuarioInversionista { get; set; }
-
     }
 }

@@ -12,8 +12,8 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.Proyectos
             builder.ToTable(nameof(Proyecto));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.UsuarioEncargadoId).IsRequired().HasMaxLength(36);
-            builder.Property(p => p.Codigo).IsRequired().HasMaxLength(80);
-            builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(80);
+            builder.Property(p => p.Codigo).IsRequired().HasMaxLength(30);
+            builder.Property(p => p.Descripcion).IsRequired().HasMaxLength(500);
             builder.Property(p => p.MontoTotal).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(p => p.MontoMinimoInversion).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(p => p.MontoMaximoInversion).IsRequired().HasColumnType("decimal(18,2)");

@@ -163,12 +163,12 @@ INSERT INTO mas_EstadoCartera(Descripcion) VALUES ('Al dia')
 INSERT INTO mas_EstadoCartera(Descripcion) VALUES ('Pendiente')
 INSERT INTO mas_EstadoCartera(Descripcion) VALUES ('Mora')
 
---[dbo].[mas_EstadoCliente]
-INSERT INTO mas_EstadoCliente(Descripcion) VALUES ('Nuevo')
-INSERT INTO mas_EstadoCliente(Descripcion) VALUES ('En proceso')
-INSERT INTO mas_EstadoCliente(Descripcion) VALUES ('Convertido')
-INSERT INTO mas_EstadoCliente(Descripcion) VALUES ('Recuperado')
-INSERT INTO mas_EstadoCliente(Descripcion) VALUES ('Perdido')
+--[dbo].[mas_EstadoUsuario]
+INSERT INTO mas_EstadoUsuario(Descripcion) VALUES ('Nuevo')
+INSERT INTO mas_EstadoUsuario(Descripcion) VALUES ('En proceso')
+INSERT INTO mas_EstadoUsuario(Descripcion) VALUES ('Convertido')
+INSERT INTO mas_EstadoUsuario(Descripcion) VALUES ('Recuperado')
+INSERT INTO mas_EstadoUsuario(Descripcion) VALUES ('Perdido')
 
 --[dbo].[mas_EstadoFisicoPropiedad]
 INSERT INTO mas_EstadoFisicoPropiedad(Descripcion) VALUES ('Usado')

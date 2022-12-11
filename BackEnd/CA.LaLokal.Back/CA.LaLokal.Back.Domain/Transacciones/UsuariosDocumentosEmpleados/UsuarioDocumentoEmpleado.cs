@@ -13,6 +13,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosDocumentosEmpleados
         public string CertificadoLaboral { get; set; }
         public string DeclaracionRenta2UltimosAnos { get; set; }
         public string CopiaDocumentoIdentidad { get; set; }
-
     }
 }

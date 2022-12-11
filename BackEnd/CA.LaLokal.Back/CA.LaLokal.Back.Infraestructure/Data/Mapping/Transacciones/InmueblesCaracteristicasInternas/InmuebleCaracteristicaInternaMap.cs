@@ -12,7 +12,6 @@ namespace CA.LaLokal.Back.Infraestructure.Data.Mapping.Transacciones.InmueblesCa
             builder.ToTable(nameof(InmuebleCaracteristicaInterna));
             builder.Property(p => p.Id).IsRequired().HasMaxLength(36);
             builder.Property(p => p.InmuebleId).IsRequired().HasMaxLength(36);
-
             base.Configure(builder);
         }
     }

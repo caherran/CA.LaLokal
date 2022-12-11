@@ -15,6 +15,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosEducacion
         public bool EstudiaActualmente { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinalizacion { get; set; }
-
     }
 }

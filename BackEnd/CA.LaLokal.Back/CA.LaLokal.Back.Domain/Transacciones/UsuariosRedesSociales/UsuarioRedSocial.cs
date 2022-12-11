@@ -13,6 +13,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosRedesSociales
         public string URLTwitter { get; set; }
         public string URLLinkedIn { get; set; }
         public string URLInstagram { get; set; }
-
     }
 }

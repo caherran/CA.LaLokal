@@ -41,6 +41,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.Usuarios
         public string ContratoPrestacion { get; set; }
         public string RUT { get; set; }
         public string URLFoto { get; set; }
-
     }
 }

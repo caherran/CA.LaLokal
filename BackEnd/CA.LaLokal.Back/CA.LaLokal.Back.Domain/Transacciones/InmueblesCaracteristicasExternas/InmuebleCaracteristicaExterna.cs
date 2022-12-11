@@ -12,6 +12,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.InmueblesCaracteristicasExternas
         public virtual Inmueble Inmueble { get; set; }
         public int CaracteristicaExternaId { get; set; }
         public virtual CaracteristicaExterna CaracteristicaExterna { get; set; }
-
     }
 }

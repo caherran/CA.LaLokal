@@ -19,6 +19,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.UsuariosProveedores
         public string URLFacebook { get; set; }
         public string URLInstagram { get; set; }
         public int CategoriaId { get; set; }
-
     }
 }

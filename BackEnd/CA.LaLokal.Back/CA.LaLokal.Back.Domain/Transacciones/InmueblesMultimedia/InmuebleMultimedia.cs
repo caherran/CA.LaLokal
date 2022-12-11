@@ -11,6 +11,5 @@ namespace CA.LaLokal.Back.Domain.Transacciones.InmueblesMultimedia
         public virtual Inmueble Inmueble { get; set; }
         public string URLVideo { get; set; }
         public string URLTour360 { get; set; }
-
     }
 }
