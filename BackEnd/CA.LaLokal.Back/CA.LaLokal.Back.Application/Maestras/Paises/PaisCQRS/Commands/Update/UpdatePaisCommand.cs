@@ -1,13 +1,12 @@
 using AutoMapper;
-using MediatR;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using CA.LaLokal.Back.Domain.Maestras.Paises;
 using CA.Domain.Auditable.Exceptions;
+using CA.LaLokal.Back.Domain.Maestras.Paises;
 using CA.Repository.Abstractions;
 using CA.Util.MediatRUtils;
 using CA.Utils.AutoMapperUtils;
+using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CA.LaLokal.Back.Application.Maestras.Paises.PaisCQRS.Commands.Update
 {
@@ -15,7 +14,7 @@ namespace CA.LaLokal.Back.Application.Maestras.Paises.PaisCQRS.Commands.Update
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
-
+        public string Nombre { get; set; }
     }
 
     public class UpdatePaisCommandHandler : IRequestHandler<UpdatePaisCommand, ResponseBase<bool>>

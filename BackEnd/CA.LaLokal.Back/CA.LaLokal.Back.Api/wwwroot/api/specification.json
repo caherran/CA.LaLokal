@@ -5063,6 +5063,41 @@
         }
       }
     },
+    "/api/Ciudad/GetCiudadesDepartamento/{departamentoId}": {
+      "get": {
+        "tags": [
+          "Ciudad"
+        ],
+        "operationId": "Ciudad_GetCiudadesDepartamento",
+        "parameters": [
+          {
+            "name": "departamentoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CiudadDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Departamento/{id}": {
       "get": {
         "tags": [
@@ -5214,6 +5249,41 @@
                 "schema": {
                   "type": "integer",
                   "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Departamento/GetDepartamentosPais/{paisId}": {
+      "get": {
+        "tags": [
+          "Departamento"
+        ],
+        "operationId": "Departamento_GetDepartamentosPais",
+        "parameters": [
+          {
+            "name": "paisId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DepartamentoDto"
+                  }
                 }
               }
             }
@@ -9171,6 +9241,41 @@
         }
       }
     },
+    "/api/ZonaBarrio/GetZonasBarriosCiudad/{ciudadId}": {
+      "get": {
+        "tags": [
+          "ZonaBarrio"
+        ],
+        "operationId": "ZonaBarrio_GetZonasBarriosCiudad",
+        "parameters": [
+          {
+            "name": "ciudadId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZonaBarrioDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ZonaGeografica/{id}": {
       "get": {
         "tags": [
@@ -9884,6 +9989,10 @@
             "format": "int32"
           },
           "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
             "type": "string",
             "nullable": true
           }
@@ -13865,6 +13974,10 @@
           "codigo": {
             "type": "string",
             "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -13877,6 +13990,10 @@
             "format": "int32"
           },
           "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
             "type": "string",
             "nullable": true
           }

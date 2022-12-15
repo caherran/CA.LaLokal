@@ -1,4 +1,3 @@
-using System;
 using CA.Domain.Auditable;
 
 namespace CA.LaLokal.Back.Domain.Maestras.Paises
@@ -7,6 +6,6 @@ namespace CA.LaLokal.Back.Domain.Maestras.Paises
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
-
+        public string Nombre { get; set; }
     }
 }

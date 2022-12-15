@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using CA.Api.Utils.Controller;
 using CA.LaLokal.Back.Application.Maestras.Ciudades.CiudadCQRS.Commands.Create;
 using CA.LaLokal.Back.Application.Maestras.Ciudades.CiudadCQRS.Commands.Delete;
 using CA.LaLokal.Back.Application.Maestras.Ciudades.CiudadCQRS.Commands.Update;
 using CA.LaLokal.Back.Application.Maestras.Ciudades.CiudadCQRS.Queries;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CA.LaLokal.Back.Api.Controllers.Maestras
 {
@@ -32,6 +31,25 @@ namespace CA.LaLokal.Back.Api.Controllers.Maestras
         public async Task<ActionResult<List<CiudadDto>>> Get()
         {
             var result = await Mediator.Send(new GetCiudadesQuery());
+            if (result.IsValidResponse)
+            {
+                return Ok(result.Result);
+            }
+            else
+            {
+                return BadRequest(result.Errors);
+            }
+        }
+
+        [HttpGet("GetCiudadesDepartamento/{departamentoId:int}")]
+        public async Task<ActionResult<List<CiudadDto>>> GetCiudadesDepartamento(int departamentoId)
+        {
+            GetCiudadesDepartamentoQuery query = new GetCiudadesDepartamentoQuery
+            {
+                DepartamentoId = departamentoId
+            };
+
+            var result = await Mediator.Send(query);
             if (result.IsValidResponse)
             {
                 return Ok(result.Result);

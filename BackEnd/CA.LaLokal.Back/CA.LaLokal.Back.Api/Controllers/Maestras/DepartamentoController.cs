@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using CA.Api.Utils.Controller;
 using CA.LaLokal.Back.Application.Maestras.Departamentos.DepartamentoCQRS.Commands.Create;
 using CA.LaLokal.Back.Application.Maestras.Departamentos.DepartamentoCQRS.Commands.Delete;
 using CA.LaLokal.Back.Application.Maestras.Departamentos.DepartamentoCQRS.Commands.Update;
 using CA.LaLokal.Back.Application.Maestras.Departamentos.DepartamentoCQRS.Queries;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CA.LaLokal.Back.Api.Controllers.Maestras
 {
@@ -32,6 +31,25 @@ namespace CA.LaLokal.Back.Api.Controllers.Maestras
         public async Task<ActionResult<List<DepartamentoDto>>> Get()
         {
             var result = await Mediator.Send(new GetDepartamentosQuery());
+            if (result.IsValidResponse)
+            {
+                return Ok(result.Result);
+            }
+            else
+            {
+                return BadRequest(result.Errors);
+            }
+        }
+
+        [HttpGet("GetDepartamentosPais/{paisId:int}")]
+        public async Task<ActionResult<List<DepartamentoDto>>> GetDepartamentosPais(int paisId)
+        {
+            GetDepartamentosPaisQuery query = new GetDepartamentosPaisQuery
+            {
+                PaisId = paisId
+            };
+
+            var result = await Mediator.Send(query);
             if (result.IsValidResponse)
             {
                 return Ok(result.Result);

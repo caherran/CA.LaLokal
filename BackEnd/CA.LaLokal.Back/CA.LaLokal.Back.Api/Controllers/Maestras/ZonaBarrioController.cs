@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using CA.Api.Utils.Controller;
 using CA.LaLokal.Back.Application.Maestras.ZonasBarrios.ZonaBarrioCQRS.Commands.Create;
 using CA.LaLokal.Back.Application.Maestras.ZonasBarrios.ZonaBarrioCQRS.Commands.Delete;
 using CA.LaLokal.Back.Application.Maestras.ZonasBarrios.ZonaBarrioCQRS.Commands.Update;
 using CA.LaLokal.Back.Application.Maestras.ZonasBarrios.ZonaBarrioCQRS.Queries;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CA.LaLokal.Back.Api.Controllers.Maestras
 {
@@ -32,6 +31,25 @@ namespace CA.LaLokal.Back.Api.Controllers.Maestras
         public async Task<ActionResult<List<ZonaBarrioDto>>> Get()
         {
             var result = await Mediator.Send(new GetZonasBarriosQuery());
+            if (result.IsValidResponse)
+            {
+                return Ok(result.Result);
+            }
+            else
+            {
+                return BadRequest(result.Errors);
+            }
+        }
+
+        [HttpGet("GetZonasBarriosCiudad/{ciudadId:int}")]
+        public async Task<ActionResult<List<ZonaBarrioDto>>> GetZonasBarriosCiudad(int ciudadId)
+        {
+            GetZonasBarriosCiudadQuery query = new GetZonasBarriosCiudadQuery
+            {
+                CiudadId = ciudadId
+            };
+
+            var result = await Mediator.Send(query);
             if (result.IsValidResponse)
             {
                 return Ok(result.Result);
