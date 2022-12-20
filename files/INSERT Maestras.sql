@@ -320,15 +320,15 @@ INSERT INTO mas_Tiempo(Descripcion) VALUES ('Semanal')
 INSERT INTO mas_Tiempo(Descripcion) VALUES ('Quincenal')
 INSERT INTO mas_Tiempo(Descripcion) VALUES ('Diario')
 
---[dbo].[mas_TipoCliente]
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Administrador')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Gestor inmobiliario')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Vendedor')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Comprador')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Propieario')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Inquilino')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Codeudor')
-INSERT INTO mas_TipoCliente(Descripcion) VALUES ('Inversionista')
+--[dbo].[mas_TipoUsuario]
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Administrador')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Gestor inmobiliario')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Vendedor')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Comprador')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Propieario')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Inquilino')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Codeudor')
+INSERT INTO mas_TipoUsuario(Descripcion) VALUES ('Inversionista')
 
 --[dbo].[mas_TipoInmueble]
 INSERT INTO mas_TipoInmueble(Descripcion) VALUES ('Apartaestudio')
